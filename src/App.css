@@ -2,6 +2,63 @@
   text-align: center;
 }
 
+/* .data-container{
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+  align-items: left;
+} */
+.image-place{
+  width: 95%;
+  height: 300px;
+  border-style: none;
+  border-radius: 0.5em;
+  background-color: rgb(177, 177, 177);
+  margin-left: 0.75em;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #c2c2c2;
+}
+.container{
+  margin-top: 0.75em;
+  margin-left: 6.5em;
+  border-style: solid;
+  border-radius: 0.5em;
+  border-color: rgb(216, 216, 216);
+  width: 25%;
+  float: left;
+  align-self: center;
+  box-shadow: 0 0 10px dimgrey;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.container:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 5px 20px rgb(75, 75, 75);
+
+}
+.container:active{
+  transform: translateY(8px);
+}
+.data{
+  width: fit-content;
+  float: left;
+  margin-right: 3em;
+  margin-left: 4em;
+}
+
+
+.header{
+  background-color:#282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: darkslategray;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
