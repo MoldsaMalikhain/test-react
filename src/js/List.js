@@ -1,21 +1,21 @@
 
 export const fruits = [
     {
+        id : 0,
         text : "Apple",
         price : 8
     },
     {
+        id : 1,
         text : "Banana",
         price: 10
     },
     {
+        id : 2,
         text : "Papaya",
         price: 10
     },
-    {
-        text: "Some",
-        price: 10
-    }
+
 ]
         
     

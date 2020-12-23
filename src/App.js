@@ -8,11 +8,18 @@ import Cart from './js/components/Cart'
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Cart/>
-      <div>
-        <Panel/>
-      </div>
+      <header><p>Shopping Cart</p></header>
+      <main>
+        <div className = 'content'>
+          <div className='main-content'>
+            <Panel/>
+          </div>
+          <div className = 'sidebar'>
+            Cart Items
+          </div>
+        </div>
+      </main>
+      <footer>footer</footer>
     </div>
   );
 }
