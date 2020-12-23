@@ -1,13 +1,18 @@
-import './App.css';
-import Panel from './Panel';
-import {HomePageHeader} from './Panel'
+import './css/App.css';
+import Panel from './js/components/Panel';
+import Header from './js/components/Header'
+import Cart from './js/components/Cart'
+
 
 
 function App() {
   return (
     <div className="App">
-      <HomePageHeader/>
-      <Panel />
+      <Header/>
+      <Cart/>
+      <div>
+        <Panel/>
+      </div>
     </div>
   );
 }
