@@ -1,95 +1,173 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-areas: 'header'
+                       'main'
+                       'footer';
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100% ;
+}
+a{
+  text-decoration: none;
+  color:#282c34;
+}
+body,
+input,
+select,
+textarea{
+  font-size: 1.6rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* .data-container{
-  padding-left: 3em;
-  padding-right: 3em;
-  margin-top: 3em;
-  align-items: left;
-} */
-.image-place{
-  width: 95%;
-  height: 300px;
-  border-style: none;
-  border-radius: 0.5em;
-  background-color: rgb(177, 177, 177);
-  margin-left: 0.75em;
-  font-size: 1em;
-  font-weight: bolder;
+header{
+  grid-area: header;
+  background-color: #282c34;
   color: #c2c2c2;
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+}
+header p{
+  font-size: medium;
+  font-weight: 800;
+  transition: 1s;
+}
+header p:hover{
+  transform: translateX(1em);
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+  background-color: #282c34;
+  color: #c2c2c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-content{
+  flex: 3 60rem;
+}
+.sidebar{
+  flex: 1 20rem;
+}
+
+
+
+/********************************************* products *********************************************/
+
+
+.containers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+}
+.containers li{
+  flex: 1 1 14rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 .container{
-  margin-top: 0.75em;
-  margin-left: 6.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 41.2rem; 
   border-style: solid;
   border-radius: 0.5em;
   border-color: rgb(216, 216, 216);
-  width: 25%;
-  float: left;
-  align-self: center;
   box-shadow: 0 0 10px dimgrey;
-  transition: all 0.5s;
+  transition: all 0.2s;
   cursor: pointer;
 }
 .container:hover{
   transform: translateY(-4px);
-  box-shadow: 0 5px 20px rgb(75, 75, 75);
-
+  box-shadow: 0 10px 10px rgb(75, 75, 75);
 }
-.container:active{
-  transform: translateY(8px);
+.container hr{
+  width: 90%;
+  background-color: #969696;
+  color: #969696;
+  border-width: 0px;
+  height: 2px;
+}
+.image-place{
+  text-align: center;
+  width: 99%;
+  height: 30rem;
+  border-radius: 0.5em;
+  background-color: rgb(177, 177, 177);
+  margin: auto;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #c2c2c2;
+}
+.data-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data-price p, button{
+  text-align: center;
+  flex: 1;
+}
+.data-price p{
+  margin-top: 0.3em;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: rgb(129, 129, 129);
 }
 .data{
-  width: fit-content;
-  float: left;
-  margin-right: 3em;
-  margin-left: 4em;
+  margin-left: 0.5em;
+  font-size: large;
+  margin-bottom: 0.2em;
 }
-
-
-.header{
-  background-color:#282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: darkslategray;
+.panel-button{
+  display: inline-block;
+  border:none;
+  border-radius: 0.2em;
+  font-size: 2rem;
+  margin:1em;
+  padding: 1em;
+  cursor: pointer;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.panel-button span{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.panel-button span:after{
+  content: '\00bb';
+  position:absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.1s;
 }
-
-.App-header {
+.panel-button:hover span{
+  padding-right: 25px;
+}
+.panel-button:hover span:after{
+  opacity: 1;
+  right: 0;
+}
+.panel-button:active{
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #c2c2c2;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.panel-button:active span:after{
+  color: #c2c2c2;
+  right: -20px;
 }
