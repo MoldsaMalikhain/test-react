@@ -1,44 +1,45 @@
 .App {
   display: grid;
-  grid-template-areas: 'header'
-                       'main'
-                       'footer';
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
-  height: 100% ;
+  height: 100%;
 }
-a{
+a {
   text-decoration: none;
-  color:#282c34;
+  color: #282c34;
 }
 body,
 input,
 select,
-textarea{
+textarea {
   font-size: 1.6rem;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-header{
+header {
   grid-area: header;
   background-color: #282c34;
   color: #c2c2c2;
   display: flex;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-header p{
+header p {
   font-size: medium;
   font-weight: 800;
   transition: 1s;
 }
-header p:hover{
+header p:hover {
   transform: translateX(1em);
 }
-main{
+main {
   grid-area: main;
 }
-footer{
+footer {
   grid-area: footer;
   background-color: #282c34;
   color: #c2c2c2;
@@ -46,23 +47,20 @@ footer{
   justify-content: center;
   align-items: center;
 }
-.content{
+.content {
   display: flex;
   flex-wrap: wrap;
 }
-.main-content{
+.main-content {
   flex: 3 60rem;
 }
-.sidebar{
+.sidebar {
   flex: 1 20rem;
 }
 
-
-
 /********************************************* products *********************************************/
 
-
-.containers{
+.containers {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -71,19 +69,18 @@ footer{
   margin: 0;
   padding: 0;
   list-style-type: none;
-
 }
-.containers li{
+.containers li {
   flex: 1 1 14rem;
   padding: 1rem;
   margin: 1rem;
 }
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  width: 41.2rem; 
+  width: 41.2rem;
   border-style: solid;
   border-radius: 0.5em;
   border-color: rgb(216, 216, 216);
@@ -91,18 +88,18 @@ footer{
   transition: all 0.2s;
   cursor: pointer;
 }
-.container:hover{
+.container:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 10px rgb(75, 75, 75);
 }
-.container hr{
+.container hr {
   width: 90%;
   background-color: #969696;
   color: #969696;
   border-width: 0px;
   height: 2px;
 }
-.image-place{
+.image-place {
   text-align: center;
   width: 99%;
   height: 30rem;
@@ -113,61 +110,120 @@ footer{
   font-weight: bolder;
   color: #c2c2c2;
 }
-.data-price{
+.data-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.data-price p, button{
+.data-price p,
+button {
   text-align: center;
   flex: 1;
 }
-.data-price p{
+.data-price p {
   margin-top: 0.3em;
   font-size: 2.4rem;
   font-weight: 900;
   color: rgb(129, 129, 129);
 }
-.data{
+.data {
   margin-left: 0.5em;
   font-size: large;
   margin-bottom: 0.2em;
 }
-.panel-button{
+.panel-button {
   display: inline-block;
-  border:none;
+  border: none;
   border-radius: 0.2em;
   font-size: 2rem;
-  margin:1em;
+  margin: 1em;
   padding: 1em;
   cursor: pointer;
 }
-.panel-button span{
+.panel-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.2s;
 }
-.panel-button span:after{
-  content: '\00bb';
-  position:absolute;
+.panel-button span:after {
+  content: "\00bb";
+  position: absolute;
   opacity: 0;
   top: 0;
   right: -20px;
   transition: 0.1s;
 }
-.panel-button:hover span{
+.panel-button:hover span {
   padding-right: 25px;
 }
-.panel-button:hover span:after{
+.panel-button:hover span:after {
   opacity: 1;
   right: 0;
 }
-.panel-button:active{
+.panel-button:active {
   background-color: #282c34;
   color: #c2c2c2;
 }
-.panel-button:active span:after{
+.panel-button:active span:after {
   color: #c2c2c2;
   right: -20px;
+}
+
+/********************************************* Cart *********************************************/
+
+.cart {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+.cart-header {
+  border-bottom: 0.1rem #c2c2c2 solid;
+  font-weight: 800;
+}
+.cart-items {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+.cart-items li {
+  display: flex;
+  border-bottom: 0.1rem #c2c2c2 solid;
+  transition: 0.5s;
+  justify-content: space-between;
+}
+.cart-items li:hover {
+  cursor: pointer;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 10px rgb(75, 75, 75);
+}
+.cart-items li div {
+  padding: 0.5rem;
+}
+.cart-image-place {
+  margin-top: 1em;
+  text-align: center;
+  width: 8rem;
+  height: 6rem;
+  border-radius: 0.5em;
+  background-color: rgb(177, 177, 177);
+  font-size: 1em;
+  font-weight: bolder;
+  color: #c2c2c2;
+}
+.remove-button {
+  display: inline-block;
+  border: none;
+  border-radius: 0.2em;
+  font-size: 2rem;
+  margin: 1em;
+  padding: 1em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.remove-button:hover {
+  background-color: crimson;
+}
+.remove-button:active {
+  background-color: rgb(94, 26, 26);
 }

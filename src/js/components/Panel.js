@@ -1,6 +1,6 @@
 import React from "react";
 import '../../css/App.css';
-import fruits from '../List.json';
+import fruits from '../List';
 
 class Panel extends React.Component{
     
@@ -8,13 +8,13 @@ class Panel extends React.Component{
         return(
             <>
                 <ul className = "containers">
-                    {fruits.fruits.map((data, key) =>{
+                    {fruits.map((data, key) =>{
                         return( 
                             <li key = {key+=1}>
                                 <div className="container">
                                     <a href={'#' + data.id}>
                                         <div className = "image-place"> IMG </div>
-                                        <p className = 'data'>{data.text}</p>
+                                        <p className = 'data'>{data.name}</p>
                                     </a>
                                     <hr></hr>
                                     <div className='data-price'>
