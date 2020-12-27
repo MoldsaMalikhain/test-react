@@ -8,24 +8,36 @@ import Cart from './js/components/Cart'
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state ={
-      cartItems: []
+    this.state={
+      cartItems:[]
     }
+    this.addToCart = this.addToCart.bind(this);
+    this.removeItem = this.removeItem.bind(this)
+  }
+  removeItem(product){
+    const inCart = this.state.cartItems.slice();
+    this.setState({
+      cartItems: inCart.filter(x=>x.id !== product.id)
+    })
+    inCart.filter(x=>x.id !== product.id)
+
   }
 
-  addToCart = (product) =>{
-    const cartItems = this.state.cartItems.slice();
-    console.log(product);
+  addToCart(product){
+    const inCart = this.state.cartItems.slice();
     let alreadyInCart = false;
-    // cartItems.foreEach(item =>{
-    //   if(item.id === product.id)
-    //   item.count++;
-    //   alreadyInCart = true;
-    // });
-    // if(!alreadyInCart){
-    //   cartItems.push({...product, count: 1})
-    // }
-    // this.setState({cartItems});
+    inCart.forEach(item =>{
+      if(item.id === product.id){
+        item.count++;
+        alreadyInCart = true;
+        console.log('Already in cart')
+      }
+    });
+    if(!alreadyInCart){
+      console.log("Adding to cart")
+      inCart.push({...product, count: 1})
+    }
+    this.setState({cartItems:inCart});
   }
 
   render(){
@@ -38,7 +50,7 @@ class App extends React.Component {
               <Panel addToCart={this.addToCart}/>
             </div>
             <div className = 'sidebar'>
-              <Cart cartItems={this.state.cartItems}/>
+              <Cart cartItems={this.state.cartItems} removeItem={this.removeItem}/>
             </div>
           </div>
         </main>
