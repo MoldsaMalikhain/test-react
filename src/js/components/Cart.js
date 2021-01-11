@@ -4,8 +4,18 @@ import '../../css/App.css';
 
 
 class Cart extends React.Component{
+    // priceDiscount(items){
+    //     this.setState({price : items.reduce((a,c) => a + (c.price * c.count), 0)})
+    //     if(items.count % 3){}
+    //     else{
+    //     }
+    //     console.log(this.state.price)
+    //     return <div>{this.state.price}$</div>;
+    // }
+
     render(){
     const {cartItems} = this.props
+    
     return(
         <>
             <div>
@@ -19,8 +29,9 @@ class Cart extends React.Component{
                 <div className = 'cart'>
                     <ul className = 'cart-items'>
                         {cartItems.map(items =>{
+                            
                             return(
-                                <li key={items.id}>
+                                <li key={items.id + 1}>
                                     <div>
                                         <a href={'#' + items.id}>
                                             <div className = "cart-image-place" style={{marginLeft:'0.5em'}}> IMG </div>
@@ -37,14 +48,18 @@ class Cart extends React.Component{
                             )
                         })}
                     </ul>
-                    <div className='cart'>
-                        <div className='total'>
-                            Total: 
-                            <div>
-                                {cartItems.reduce((a,c) => a + (c.price * c.count), 0)}$
+                    {cartItems.length === 0 ?
+                        <div></div>
+                        :
+                        <div className='cart'>
+                            <div className='total'>
+                                Total: 
+                                <div>
+                                      {cartItems.reduce((a,c) => a + (c.price * c.count), 0)}$ 
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </>
