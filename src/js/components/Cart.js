@@ -5,13 +5,13 @@ import '../../css/App.css';
 
 class Cart extends React.Component{
     // priceDiscount(items){
-    //     this.setState({price : items.reduce((a,c) => a + (c.price * c.count), 0)})
     //     if(items.count % 3){}
     //     else{
     //     }
     //     console.log(this.state.price)
-    //     return <div>{this.state.price}$</div>;
-    // }
+
+    // return <div>{items.reduce((a,c) => a + (c.price * c.count), 0)}$</div>;}
+
 
     render(){
     const {cartItems} = this.props
@@ -55,7 +55,7 @@ class Cart extends React.Component{
                             <div className='total'>
                                 Total: 
                                 <div>
-                                      {cartItems.reduce((a,c) => a + (c.price * c.count), 0)}$ 
+                                      {/* {cartItems.reduce((a,c) => a + (c.price * c.count), 0)}$  */}
                                 </div>
                             </div>
                         </div>
